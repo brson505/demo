@@ -51,28 +51,4 @@ class DemoApplicationTests {
 		assertThat(uri.toString()).isEqualTo("http://wizvera.com/q?a=a&b=b%20b")
 	}
 
-	@Test
-	fun test(){
-		val scope = "email profile"
-		val redirectUri= "http://localhost/google/auth/callback"
-		val clientId = "873828645421-bpn9tu20qhccgb19t7foqkc84ube0im4.apps.googleusercontent.com"
-		val clientSecret = "ACWcLvufXUnlPeNrMYzBvIns"
-		val apiKey = "AIzaSyAbqTWoUsUYd05m0I48nRDFeyf4oAa0K5E"
-		val URL_token = "https://oauth2.googleapis.com/token"
-		val code = "4/2wEvNoFOorbCAZumpSV_CIubWuh04MdHOPNFa6R2zvuhbzv9ppHLn0YsfsGcXobcuk0qpLxjuQAix-2lgdVFifg"
-
-		val req = LinkedMultiValueMap<String, String>()
-		req["code"] = code
-		req["client_id"] = clientId
-		req["client_secret"] = clientSecret
-		req["redirect_uri"] = redirectUri
-		req["grant_type"] = "authorization_code"
-
-		val restTemplate = RestTemplate()
-		val httpHeaders = HttpHeaders()
-		httpHeaders.contentType = MediaType.APPLICATION_FORM_URLENCODED
-		val httpEntity = HttpEntity(req, httpHeaders)
-		val res = restTemplate.postForObject(URL_token, httpEntity, String.javaClass)
-		println("res:[$res]")
-	}
 }

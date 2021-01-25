@@ -46,7 +46,7 @@ class GoogleController {
 
   @GetMapping("/google/auth/callback")
   @ResponseBody
-  fun google(@RequestParam params:Map<String,String>): String {
+  fun google(@RequestParam params:Map<String,String>): String? {
     println("param:" + params.toString());
 
 
@@ -83,7 +83,7 @@ class GoogleController {
     println("token res:" + res.body)
     println("token res:" + res.headers)
 
-    return "" + res
+    return res.body
   }
 
   @GetMapping("/google2")

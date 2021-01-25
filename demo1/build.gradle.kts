@@ -48,3 +48,12 @@ tasks.withType<KotlinCompile> {
 		jvmTarget = "11"
 	}
 }
+
+//tasks.getByName<org.springframework.boot.gradle.tasks.bundling.BootBuildImage>("bootBuildImage") {
+//	builder = "mine/java-cnb-builder"
+//	runImage = "mine/java-cnb-run"
+//}
+//
+//tasks.getByName<org.springframework.boot.gradle.tasks.run.BootRun>("bootRun") {
+//	sourceResources(sourceSets["main"])
+//}
