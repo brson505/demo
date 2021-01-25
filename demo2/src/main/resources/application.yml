@@ -1,0 +1,15 @@
+
+#spring.devtools.livereload.enabled = true
+#spring.devtools.freemarker.cache =false
+#spring.devtools.restart.exclude=static/**,public/**
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google :
+            client-id : [CLIENT_ID]
+            client-secret : [CLIENT_SECRET]
+            # redirectUri: "{baseUrl}/login/oauth2/code/google"
+            scope : email, profile
